@@ -17,13 +17,6 @@ export CONFIG_DIR=~/projects/laptop-configuration
 source "$CONFIG_DIR/aliases"
 
 
-# pyenv
-# export PATH="/usr/local/opt/openssl/bin:$PATH"
-# eval "$(pyenv init -)"
-
-# Add RVM to PATH
-# export PATH="$PATH:$HOME/.rvm/bin"
-
 # fzf command tools
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
