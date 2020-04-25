@@ -8,6 +8,6 @@
 	quotePath = false
 
 [diff]
-#	noprefix = true
+	noprefix = true
 [rerere]
 	enabled = true
