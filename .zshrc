@@ -12,33 +12,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# alias git
-alias ggp-f="git push --force-with-lease origin HEAD"
-alias g-reset-f="git reset --hard @{upstream}"
-alias gls="git --no-pager log --decorate --abbrev-commit --pretty=oneline -n 5"
-alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD ^origin/develop"
+export CONFIG_DIR=~/projects/laptop-configuration
 
-# aliases for ERPC
-alias docker-up="docker-compose -f dev/docker-compose.dev.yml up"
-alias docker-down="docker-compose -f dev/docker-compose.dev.yml down"
-alias run-docker-compose="docker-down && docker-up --build"
-
-alias fake-smtp="java -jar ~/Desktop/creno_dispo/fakeSMTP-2.0.jar  -o ~/Desktop/creno_dispo/smtp_output"
-
-# Gatling aliases for ERPC
-alias gatling-editeur-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur.formation.priseSousMandat.PriseSousMandatEditeurSimulation"
-alias gatling-front-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur.formation.priseSousMandat.PriseSousMandatFrontSimulation"
-
-
-alias build-batch-reprise="docker build -t batch-reprise ~/projects/creno-dispo/batch_reprise"
-alias run-batch-reprise="build-batch-reprise && \
-            docker run --rm --network=dev_default \
-            --env-file ~/projects/creno-dispo/batch_reprise/env/datasource.env \
-            batch-reprise \
-            default"
-# alias run-batch-reprise="docker-compose \
-#     -f ~/projects/creno-dispo/dev/docker-compose.dev.data.yml up --build"
-
+source "$CONFIG_DIR/aliases"
 
 # Source bash_profile
 # source ~/.bash_profile
