@@ -87,47 +87,6 @@ fi
 ##################################
 ##################################
 
-# For oracle CLI
-# export PATH=/Users/hugues.tavenard/bin:$PATH
-# [[ -e "/Users/hugues.tavenard/lib/oracle-cli/lib/python3.5/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/Users/hugues.tavenard/lib/oracle-cli/lib/python3.5/site-packages/oci_cli/bin/oci_autocomplete.sh"
-
-# custom git functions
-# function ticket_number() {
-#     echo $(git_current_branch) | grep -o '^[0-9]\+'
-# }
-
-# function commit_message() {
-#     echo "${1}"\($(ticket_number)\)": ${2}"
-# }
-
-# function gcamf() {
-#     git commit -a -m "$(commit_message feat ${1})"
-# }
-
-# function gcamr() {
-#     git commit -a -m "$(commit_message refactor ${1})"
-# }
-
-# function gcam-fix() {
-#     git commit -a -m "$(commit_message fix ${1})"
-# }
-
-# function gcam-chore() {
-#     git commit -a -m "$(commit_message chore ${1})"
-# }
-
-# function gcam-test() {
-#     git commit -a -m "$(commit_message test ${1})"
-# }
-
-
-# function read() {
-#     less ~/projects/creno-dispo/"${1}"
-# }
-
-# function gcam-skip() {
-#     git commit -a -m "[skip-ci] ${1}"
-# }
 
 # zprof
 
