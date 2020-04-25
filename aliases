@@ -52,11 +52,6 @@ alias run-batch-reprise="build-batch-reprise && \
 #     git commit -a -m "$(commit_message test ${1})"
 # }
 
-
-# function read() {
-#     less ~/projects/creno-dispo/"${1}"
-# }
-
 # function gcam-skip() {
 #     git commit -a -m "[skip-ci] ${1}"
 # }
