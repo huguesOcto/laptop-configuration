@@ -1,0 +1,13 @@
+[user]
+	name = Hugues Tavenard
+	email = htavenard@octo.com
+[core]
+	editor = vim
+	autocrlf = input
+	eol = lf
+	quotePath = false
+
+[diff]
+#	noprefix = true
+[rerere]
+	enabled = true
