@@ -1,0 +1,28 @@
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+
+# ERPC
+# https://gitlab.com/crenodispo/crenodispo-infra-aws/blob/master/README.md
+Include ~/projects/crenodispo-infra/ssh.config
+
+#  Generics
+# All generic data have to be at the end
+# Because there is no override if more than 1 option is found
+# (first one is applied)
+Host *
+    Port 22
+    Protocol 2
+    ForwardAgent yes
+    ForwardX11 no
+    GSSAPIAuthentication no
+    # Maintain session even if connection breaks (max 10min)
+    TCPKeepAlive no
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+    # UseRoaming no
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+    IdentityFile /Users/hugues.tavenard/.ssh/id_rsa
+    # LogLevel: QUIET, FATAL, ERROR, INFO, VERBOSE, DEBUG, DEBUG1, DEBUG2, DEBUG3
+    LogLevel QUIET
