@@ -7,7 +7,6 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(
   git
-  # kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
