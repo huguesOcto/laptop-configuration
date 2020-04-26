@@ -25,6 +25,8 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
+alias sz="source $ZDOTDIR/.zshrc"
+
 # git
 alias ggp-f="git push --force-with-lease origin HEAD"
 alias g-reset-f="git reset --hard @{upstream}"
