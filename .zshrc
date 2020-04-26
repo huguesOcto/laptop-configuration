@@ -2,7 +2,7 @@
 export ZSH=/Users/hugues.tavenard/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to disable auto-setting terminal title.
+# Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
