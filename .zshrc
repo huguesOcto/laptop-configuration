@@ -54,7 +54,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # this is a good alias, it works by default just using $LSCOLORS
   ls -G . &>/dev/null && alias ls='ls -G'
 else
-  For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
+  #For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
   if [[ -z "$LS_COLORS" ]]; then
     echo "salut"
     (( $+commands[dircolors] )) && eval "$(dircolors -b)"
@@ -62,14 +62,12 @@ else
 
 
   ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
-
-  # Take advantage of $LS_COLORS for completion as well.
-  # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 fi
 
 # Completion
 # Load all stock functions (from $fpath files) called below.
-autoload -U compaudit compinit
+autoload -U  compinit
+# autoload -U compaudit compinit
 zmodload -i zsh/complist
 
 WORDCHARS=''
