@@ -16,12 +16,25 @@ export CONFIG_DIR=~/projects/laptop-configuration
 source "$CONFIG_DIR/aliases"
 
 
+################################################################################
 # fzf command tools
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="$PATH:/usr/local/opt/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+################################################################################
 
 # z command
 source /usr/local/etc/profile.d/z.sh
 
+################################################################################
 # setup nvm
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
@@ -39,6 +52,7 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type __init_nvm)" = function ]; then
   }
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+################################################################################
 
 
 # zprof
