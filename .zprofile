@@ -14,3 +14,5 @@ export _Z_DATA="$HOME/.local/share/z/z"
 export LESSHISTFILE="-" # no less history file
 export DOCKER_CONFIG="$HOME/.config/docker"
 export NODE_REPL_HISTORY=".local/share/node/node_repl_history"
+export SQLITE_HISTORY="$HOME/.local/share/sqlite/sqlite_history"
+export NVM_DIR="$HOME/.local/share/nvm"
