@@ -10,4 +10,5 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export HISTFILE="$HOME/.local/share/zsh/history"
 export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-${ZSH_VERSION}"
+export _Z_DATA="$HOME/.local/share/z/z"
 export LESSHISTFILE="-" # no less history file
