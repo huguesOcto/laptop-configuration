@@ -5,10 +5,13 @@
 # .local/share stands for XDG_DATA_HOME
 # .cache stands for XDG_CACHE_HOME
 
+# History
+HISTSIZE=50000
+SAVEHIST=10000
+HISTFILE="$HOME/.local/share/zsh/history"
 
 # ~/ Clean-up:
 export ZDOTDIR="$HOME/.config/zsh"
-export HISTFILE="$HOME/.local/share/zsh/history"
 export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-${ZSH_VERSION}"
 export _Z_DATA="$HOME/.local/share/z/z"
 export LESSHISTFILE="-" # no less history file
