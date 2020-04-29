@@ -21,6 +21,12 @@ alias gb='git branch'
 
 alias gf='git fetch'
 
+alias ggp-f="git push --force-with-lease origin HEAD"
+alias g-reset-f="git reset --hard @{upstream}"
+alias gls="git --no-pager log --decorate --abbrev-commit --pretty=oneline -n 5"
+alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD ^origin/develop"
+
+
 
 ggl() {
   if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then

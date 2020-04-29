@@ -27,12 +27,6 @@ setopt pushdminus
 
 alias sz="source $ZDOTDIR/.zshrc"
 
-# git
-alias ggp-f="git push --force-with-lease origin HEAD"
-alias g-reset-f="git reset --hard @{upstream}"
-alias gls="git --no-pager log --decorate --abbrev-commit --pretty=oneline -n 5"
-alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD ^origin/develop"
-
 # aliases for ERPC
 alias docker-up="docker-compose -f dev/docker-compose.dev.yml up"
 alias docker-down="docker-compose -f dev/docker-compose.dev.yml down"
