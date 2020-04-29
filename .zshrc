@@ -107,7 +107,7 @@ setopt share_history          # share command history data
 ###############################################################################
 
 
-export CONFIG_DIR=~/projects/laptop-configuration
+export CONFIG_DIR="$HOME/projects/laptop-configuration"
 source "$CONFIG_DIR/aliases.sh"
 source "$CONFIG_DIR/git_aliases_and_functions.sh"
 source "$CONFIG_DIR/robbyrussel_theme.sh"
