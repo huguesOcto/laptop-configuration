@@ -109,7 +109,7 @@ setopt share_history          # share command history data
 
 export CONFIG_DIR=~/projects/laptop-configuration
 source "$CONFIG_DIR/aliases.sh"
-source "$CONFIG_DIR/oh_my_zsh_git_plugin.sh"
+source "$CONFIG_DIR/git_aliases_and_functions.sh"
 source "$CONFIG_DIR/robbyrussel_theme.sh"
 source "$CONFIG_DIR/cool_oh_my_zsh_functions.sh"
 

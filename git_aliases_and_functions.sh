@@ -47,6 +47,39 @@ alias g-reset-f="git reset --hard @{upstream}"
 alias ggl='git pull origin $(git_current_branch)'
 alias ggp='git push origin $(git_current_branch)'
 
+# custom git functions
+# function ticket_number() {
+#     echo $(git_current_branch) | grep -o '^[0-9]\+'
+# }
+
+# function commit_message() {
+#     echo "${1}"\($(ticket_number)\)": ${2}"
+# }
+
+# function gcamf() {
+#     git commit -a -m "$(commit_message feat ${1})"
+# }
+
+# function gcamr() {
+#     git commit -a -m "$(commit_message refactor ${1})"
+# }
+
+# function gcam-fix() {
+#     git commit -a -m "$(commit_message fix ${1})"
+# }
+
+# function gcam-chore() {
+#     git commit -a -m "$(commit_message chore ${1})"
+# }
+
+# function gcam-test() {
+#     git commit -a -m "$(commit_message test ${1})"
+# }
+
+# function gcam-skip() {
+#     git commit -a -m "[skip-ci] ${1}"
+# }
+
 # ggl() {
 #   if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then
 #     git pull origin "${*}"
