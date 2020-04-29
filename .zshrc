@@ -1,11 +1,4 @@
 # zmodload zsh/zprof
-# export ZSH=/Users/hugues.tavenard/.oh-my-zsh
-
-
-# ZSH_THEME="robbyrussell"
-# plugins=(
-#   git
-# )
 
 ###############################################################################
 # Stuff from oh my zsh
@@ -114,8 +107,6 @@ setopt share_history          # share command history data
 ###############################################################################
 
 
-# source $ZSH/oh-my-zsh.sh
-
 export CONFIG_DIR=~/projects/laptop-configuration
 source "$CONFIG_DIR/aliases"
 source "$CONFIG_DIR/oh_my_zsh_git_plugin.sh"
@@ -163,6 +154,4 @@ fi
 
 
 # zprof
-
-
 
