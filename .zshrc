@@ -132,6 +132,9 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # z command
 source /usr/local/etc/profile.d/z.sh
 
+# zsh auto-suggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 ################################################################################
 # setup nvm
 # Defer initialization of nvm until nvm, node or a node-dependent command is
