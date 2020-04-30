@@ -134,7 +134,8 @@ source /usr/local/etc/profile.d/z.sh
 
 # zsh auto-suggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 ################################################################################
 # setup nvm
 # Defer initialization of nvm until nvm, node or a node-dependent command is
