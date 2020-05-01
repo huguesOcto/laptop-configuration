@@ -48,8 +48,14 @@ alias ggl='git pull origin $(git_current_branch)'
 alias ggp='git push origin $(git_current_branch)'
 
 
-# work in progress for rebase needed feature
+## WORK IN PROGRESS
+# get rebase needed status
 local behind_develop=$(command git rev-list HEAD..origin/develop 2>/dev/null | wc -l)
+
+# fuzzy checkout from remote
+alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
+
+
 
 # custom git functions
 # function ticket_number() {
