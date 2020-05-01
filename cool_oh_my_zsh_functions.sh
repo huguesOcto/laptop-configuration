@@ -1,6 +1,24 @@
 function zsh_stats() {
-  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
+  fc -l 1 \
+    | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
+    | grep -v "./" \
+    | column -c3 -s " " -t \
+    | sort -nr \
+    | nl \
+    | head -n20
 }
+
+
+
+function zsh_stats_full_commands() {
+  fc -l 1 \
+    | awk '{$1="";print $0;}' \
+    | awk '{CMD[$0]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
+    | sort -nr \
+    | head -n50 \
+    | nl
+}
+
 
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
