@@ -9,6 +9,8 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
+alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
+
 # For autocomplete history
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
