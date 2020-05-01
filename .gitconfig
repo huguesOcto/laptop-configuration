@@ -11,3 +11,5 @@
 	noprefix = true
 [rerere]
 	enabled = true
+[pager]
+   branch = false
