@@ -19,6 +19,12 @@ function zsh_stats_full_commands() {
     | nl
 }
 
+# Put last command in clipboard
+function c() {
+  fc -l | tail -n1 | cut -d " " -f 4- | tr -d '\n' | pbcopy
+  echo "Command copied !"
+}
+
 
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
