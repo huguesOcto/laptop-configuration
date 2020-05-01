@@ -25,6 +25,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
+alias vim="vim -i NONE"
 alias sz="source $ZDOTDIR/.zshrc"
 
 # aliases for ERPC

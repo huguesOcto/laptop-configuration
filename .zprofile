@@ -5,6 +5,8 @@
 # .local/share stands for XDG_DATA_HOME
 # .cache stands for XDG_CACHE_HOME
 
+export XDG_DATA_HOME="$HOME/.local/share"
+
 # History
 HISTSIZE=50000
 SAVEHIST=10000
