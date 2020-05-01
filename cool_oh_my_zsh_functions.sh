@@ -21,8 +21,10 @@ function zsh_stats_full_commands() {
 
 # Put last command in clipboard
 function c() {
-  fc -l | tail -n1 | cut -d " " -f 4- | tr -d '\n' | pbcopy
-  echo "Command copied !"
+  local last_command
+  last_command=$(fc -ln | tail -n1)
+  echo $last_command | tr -d '\n' | pbcopy
+  echo "Command \""$last_command"\" copied !"
 }
 
 
