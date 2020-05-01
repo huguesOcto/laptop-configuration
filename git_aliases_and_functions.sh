@@ -47,6 +47,10 @@ alias g-reset-f="git reset --hard @{upstream}"
 alias ggl='git pull origin $(git_current_branch)'
 alias ggp='git push origin $(git_current_branch)'
 
+
+# work in progress for rebase needed feature
+local behind_develop=$(command git rev-list HEAD..origin/develop 2>/dev/null | wc -l)
+
 # custom git functions
 # function ticket_number() {
 #     echo $(git_current_branch) | grep -o '^[0-9]\+'
