@@ -60,6 +60,11 @@ setopt auto_menu         # show completion menu on successive tab press
 setopt complete_in_word
 setopt always_to_end
 
+# Changing/making/removing directory stack
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:*:*:*' menu select

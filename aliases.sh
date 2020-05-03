@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # List directory contents
 alias l='ls -lah'
 alias ll='ls -lh'
@@ -9,6 +11,7 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
+# move to directory
 alias -- -='cd -'
 alias 1='cd -'
 alias 2='cd -2'
@@ -20,13 +23,9 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-# Changing/making/removing directory stack
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
 
 alias vim="vim -i NONE"
-alias sz="source $ZDOTDIR/.zshrc"
+alias sz='source $ZDOTDIR/.zshrc'
 
 # aliases for ERPC
 alias docker-up="docker-compose -f dev/docker-compose.dev.yml up"
