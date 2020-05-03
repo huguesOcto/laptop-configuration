@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # zmodload zsh/zprof
 
 ###############################################################################
@@ -51,8 +53,6 @@ ls -G . &>/dev/null && alias ls='ls -G'
 autoload -U  compinit
 # autoload -U compaudit compinit
 zmodload -i zsh/complist
-
-WORDCHARS=''
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
@@ -138,12 +138,12 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type __init_nvm)" = function ]; then
   declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
   function __init_nvm() {
     echo "Lazy loading nvm..."
-    for i in "${__node_commands[@]}"; do unalias $i; done
+    for i in "${__node_commands[@]}"; do unalias "$i"; done
     . "$NVM_DIR"/nvm.sh
     unset __node_commands
     unset -f __init_nvm
   }
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+  for i in "${__node_commands[@]}"; do alias "$i"='__init_nvm && '"$i"; done
 fi
 ################################################################################
 
