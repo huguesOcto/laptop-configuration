@@ -1,6 +1,4 @@
-# Query/use custom command for `git`.
-zstyle -s ":vcs_info:git:*:-all-" "command" _omz_git_git_cmd
-: ${_omz_git_git_cmd:=git}
+#!/bin/bash
 
 # functions
 function current_branch() {
@@ -50,7 +48,7 @@ alias ggp='git push origin $(git_current_branch)'
 
 ## WORK IN PROGRESS
 # get rebase needed status
-local behind_develop=$(command git rev-list HEAD..origin/develop 2>/dev/null | wc -l)
+# local behind_develop=$(command git rev-list HEAD..origin/develop 2>/dev/null | wc -l)
 
 # fuzzy checkout from remote
 alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
