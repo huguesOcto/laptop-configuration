@@ -43,21 +43,8 @@ autoload -U colors && colors
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-# TODO organise this chaotic logic
-
-if [[ "$OSTYPE" == darwin* ]]; then
-  # this is a good alias, it works by default just using $LSCOLORS
-  ls -G . &>/dev/null && alias ls='ls -G'
-else
-  #For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
-  if [[ -z "$LS_COLORS" ]]; then
-    echo "salut"
-    (( $+commands[dircolors] )) && eval "$(dircolors -b)"
-  fi
-
-
-  ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
-fi
+# Works on mac but not on linux
+ls -G . &>/dev/null && alias ls='ls -G'
 
 # Completion
 # Load all stock functions (from $fpath files) called below.
