@@ -37,7 +37,7 @@ function c() {
   local last_command
   last_command=$(fc -ln | tail -n1)
   echo $last_command | tr -d '\n' | pbcopy
-  echo "Command \""$last_command"\" copied !"
+  echo "Command \"$last_command\" copied !"
 }
 
 
