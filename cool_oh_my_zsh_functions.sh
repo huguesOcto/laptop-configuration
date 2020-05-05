@@ -1,21 +1,32 @@
 #!/bin/bash
 
+function _compute_stats() {
+  local awk_command='
+  {
+    CMD[$0]++;
+    count++;
+  }
+  END {
+    for (a in CMD)
+      print CMD[a] " " CMD[a]/count*100 "% " a;
+  }'
+  awk $awk_command $1
+}
+
 function zsh_stats() {
-  fc -l 1 \
-    | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
-    | grep -v "./" \
+  fc -ln 1 \
+    | awk '{print $1;}' \
+    | _compute_stats \
     | column -c3 -s " " -t \
     | sort -nr \
-    | nl \
-    | head -n20
+    | head -n20 \
+    | nl
 }
 
 
-
 function zsh_stats_full_commands() {
-  fc -l 1 \
-    | awk '{$1="";print $0;}' \
-    | awk '{CMD[$0]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
+  fc -ln 1 \
+    | _compute_stats \
     | sort -nr \
     | head -n50 \
     | nl
