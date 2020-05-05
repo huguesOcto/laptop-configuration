@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function zsh_stats() {
   fc -l 1 \
