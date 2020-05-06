@@ -45,3 +45,12 @@ alias run-batch-reprise="build-batch-reprise && \
             --env-file ~/projects/creno-dispo/batch_reprise/env/datasource.env \
             batch-reprise \
             default"
+
+
+
+alias run-tests="./gradlew test \
+    --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.centre.*\""
