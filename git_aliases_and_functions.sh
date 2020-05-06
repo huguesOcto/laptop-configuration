@@ -40,10 +40,10 @@ alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 
 # push/pull/reset
-alias ggp-f="git push --force-with-lease origin HEAD"
-alias g-reset-f="git reset --hard @{upstream}"
-alias ggl='git pull origin $(git_current_branch)'
 alias ggp='git push origin $(git_current_branch)'
+alias ggp-f="git push --force-with-lease origin HEAD"
+alias ggl='git pull origin $(git_current_branch)'
+alias g-reset-f="git reset --hard @{upstream}"
 
 # never used
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
