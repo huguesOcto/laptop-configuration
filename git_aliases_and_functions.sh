@@ -5,11 +5,14 @@ function current_branch() {
   git_current_branch
 }
 
+# status
+alias gst='git status'
+
 # commit/add
 alias ga='git add'
 alias gcan!='git commit -v -a --no-edit --amend'
 alias gcam='git commit -a -m'
-alias gcmsg='git commit -m'
+alias gcm='git commit -m'
 
 # diff
 alias gd='git diff'
@@ -17,6 +20,7 @@ alias gd='git diff'
 # checkout
 alias gco='git checkout'
 alias gcb='git checkout -b'
+alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
 
 # fetch
 alias gf='git fetch'
@@ -33,26 +37,19 @@ alias gup='git pull --rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 
-# status
-alias gst='git status'
-
-# never used
-alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
-
 # push/pull/reset
 alias ggp-f="git push --force-with-lease origin HEAD"
 alias g-reset-f="git reset --hard @{upstream}"
 alias ggl='git pull origin $(git_current_branch)'
 alias ggp='git push origin $(git_current_branch)'
 
+# never used
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+
 
 ## WORK IN PROGRESS
 # get rebase needed status
 # local behind_develop=$(command git rev-list HEAD..origin/develop 2>/dev/null | wc -l)
-
-# fuzzy checkout from remote
-alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
-
 
 
 # custom git functions
