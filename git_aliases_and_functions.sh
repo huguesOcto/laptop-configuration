@@ -33,6 +33,8 @@ alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow
 alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
 
 # rebase
+# todo : en faire une fonction qui rebase uniquement l'upstream quand
+# aucun argument est donné
 alias gup='git pull --rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
