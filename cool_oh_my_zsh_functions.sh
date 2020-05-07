@@ -40,6 +40,12 @@ function c() {
   echo "Command \"$last_command\" copied !"
 }
 
+function m() {
+  local my_meet='https://meet.google.com/jbt-nusx-bjm'
+  echo $my_meet | pbcopy
+  echo "Lien du meet copié dans le presse papier 👌"
+}
+
 
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
