@@ -49,8 +49,10 @@ alias run-batch-reprise="build-batch-reprise && \
 
 
 alias run-tests="./gradlew test \
-    --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.centre.*\""
+
+
