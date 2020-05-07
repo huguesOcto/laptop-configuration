@@ -15,10 +15,10 @@ HISTFILE="$HOME/.local/share/zsh/history"
 # ~/ Clean-up:
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-${ZSH_VERSION}"
-export _Z_DATA="$HOME/.local/share/z/z"
+export _Z_DATA="$XDG_DATA_HOME/z/z"
 export LESSHISTFILE="-" # no less history file
 export DOCKER_CONFIG="$HOME/.config/docker"
-export NODE_REPL_HISTORY=".local/share/node/node_repl_history"
-export SQLITE_HISTORY="$HOME/.local/share/sqlite/sqlite_history"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite/sqlite_history"
 # export NVM_DIR="$HOME/.local/share/nvm" -> thid did not work
-export GRADLE_USER_HOME="$HOME"/.local/share/gradle
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
