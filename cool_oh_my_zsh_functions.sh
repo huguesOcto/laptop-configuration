@@ -32,14 +32,15 @@ function zsh_stats_full_commands() {
     | nl
 }
 
-# Put last command in clipboard
+# put last command in clipboard
 function c() {
   local last_command
   last_command=$(fc -ln | tail -n1)
   echo $last_command | tr -d '\n' | pbcopy
-  echo "Command \"$last_command\" copied !"
+  echo "Commande \"$last_command\" copiée 👌"
 }
 
+# put my meet link in clipboard
 function m() {
   local my_meet='https://meet.google.com/jbt-nusx-bjm'
   echo $my_meet | pbcopy
