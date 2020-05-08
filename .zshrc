@@ -59,31 +59,20 @@ zmodload -i zsh/complist
 compinit -i -C -d "${ZSH_COMPDUMP}"
 _comp_options+=(globdots)  # Include hidden files
 
-
-###############################################################################
+# Load custom config
 export CONFIG_DIR="$HOME/projects/laptop-configuration"
 source "$CONFIG_DIR/aliases.sh"
 source "$CONFIG_DIR/git_aliases_and_functions.sh"
 source "$CONFIG_DIR/prompt_theme.sh"
 source "$CONFIG_DIR/cool_oh_my_zsh_functions.sh"
 
-
-################################################################################
+# Load tools
 local tools_dir="$HOME/projects/laptop-configuration/tools"
 source "$tools_dir/fzf.sh"
 source "$tools_dir/z.sh"
 source "$tools_dir/nvm.sh"
+source "$tools_dir/zsh_auto_suggestion.sh"
+source "$tools_dir/zsh_syntax_highlighting.sh"
 
-# zsh auto-suggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
-ZSH_AUTOSUGGEST_STRATEGY=(history)
-# ZSH_AUTOSUGGEST_STRATEGY=(history completion) # -> too slow
-################################################################################
-
-################################################################################
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zprof
