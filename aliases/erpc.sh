@@ -1,23 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-alias vim="vim -i NONE"
-alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
-ls -G . &>/dev/null && alias ls='ls -G' # Works on mac but not on linux
-
-# List directory contents
-alias l='ls -lah'
-alias ll='ls -lh'
-alias d='dirs -v | head -10'
-
-# Moving in directories
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-
-alias sz='source $ZDOTDIR/.zshrc'
-
-# aliases for ERPC
 alias docker-up="docker-compose -f dev/docker-compose.dev.yml up"
 alias docker-down="docker-compose -f dev/docker-compose.dev.yml down"
 alias run-docker-compose="docker-down && docker-up --build"
@@ -37,12 +19,10 @@ alias run-batch-reprise="build-batch-reprise && \
             default"
 
 
-
 alias run-tests="./gradlew test \
     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.centre.*\""
-
 
