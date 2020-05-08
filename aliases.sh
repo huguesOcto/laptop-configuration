@@ -1,7 +1,7 @@
 #!/bin/sh
 
 alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
-
+ls -G . &>/dev/null && alias ls='ls -G' # Works on mac but not on linux
 
 # List directory contents
 alias l='ls -lah'

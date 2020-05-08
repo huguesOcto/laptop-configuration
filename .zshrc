@@ -31,44 +31,42 @@ fi
 # Colors
 # ls colors
 autoload -U colors && colors
-
-# Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
-
-# Works on mac but not on linux
-ls -G . &>/dev/null && alias ls='ls -G'
-
-# Completion
-# Load all stock functions (from $fpath files) called below.
-autoload -U  compinit
-# autoload -U compaudit compinit
-zmodload -i zsh/complist
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on successive tab press
 setopt complete_in_word
 setopt always_to_end
-
 # Changing/making/removing directory stack
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
+# setopt auto_pushd
+# setopt pushd_ignore_dups
+# setopt pushdminus
+# Theme
+setopt auto_cd
+setopt multios
+setopt prompt_subst
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
+
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:*:*:*' menu select
 
+autoload -U compinit
+zmodload -i zsh/complist
 compinit -i -C -d "${ZSH_COMPDUMP}"
-
-# Include hidden files.
-_comp_options+=(globdots)
+_comp_options+=(globdots)  # Include hidden files
 
 
-# Theme
-setopt auto_cd
-setopt multios
-setopt prompt_subst
+
 
 # Apply theming defaults
 PS1="%n@%m:%~%# "
@@ -79,14 +77,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=")"             # At the very end of the prompt
 ZSH_THEME_GIT_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
 ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is clean
 
-## History command configuration
-setopt extended_history       # record timestamp of command in HISTFILE
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-setopt inc_append_history     # add commands to HISTFILE in order of execution
-setopt share_history          # share command history data
 
 ###############################################################################
 
