@@ -4,8 +4,7 @@
 
 ###############################################################################
 # Stuff from oh my zsh
-export LESS=-R
-export PAGER=less
+
 
 if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG

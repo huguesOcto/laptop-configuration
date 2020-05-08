@@ -22,3 +22,7 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/node_repl_history"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite/sqlite_history"
 # export NVM_DIR="$HOME/.local/share/nvm" -> thid did not work
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
+# Other program settings
+export LESS=-R
+export PAGER=less
