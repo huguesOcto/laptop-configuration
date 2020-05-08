@@ -2,7 +2,10 @@
 
 # zmodload zsh/zprof
 
-###############################################################################
+# Colors
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
 # For autocomplete history
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
@@ -27,11 +30,6 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
   zle -N down-line-or-beginning-search
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
-
-# Colors
-# ls colors
-autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Documentation des options : http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt auto_cd
