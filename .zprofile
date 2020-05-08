@@ -26,3 +26,8 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 # Other program settings
 export LESS=-R
 export PAGER=less
+
+# Set up language
+if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
+  export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
+fi

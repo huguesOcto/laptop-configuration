@@ -1,5 +1,8 @@
 #!/bin/sh
 
+alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
+
+
 # List directory contents
 alias l='ls -lah'
 alias ll='ls -lh'
