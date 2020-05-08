@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function _compute_stats() {
+  local separator=${1:-" "}
   local awk_command='
   {
     CMD[$0]++;
@@ -8,9 +9,9 @@ function _compute_stats() {
   }
   END {
     for (a in CMD)
-      print CMD[a] " " CMD[a]/count*100 "% " a;
+      print CMD[a] separator CMD[a]/count*100 "%" separator a;
   }'
-  awk $awk_command $1
+  awk -v separator="$separator" $awk_command
 }
 
 function zsh_stats() {
@@ -25,8 +26,10 @@ function zsh_stats() {
 
 
 function zsh_stats_full_commands() {
+  local complex_separator="[;;]"
   fc -ln 1 \
-    | _compute_stats \
+    | _compute_stats $complex_separator \
+    | column -c3 -s $complex_separator -t \
     | sort -nr \
     | head -n50 \
     | nl
