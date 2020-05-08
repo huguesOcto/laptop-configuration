@@ -6,6 +6,7 @@
 # .cache stands for XDG_CACHE_HOME
 
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # History
 HISTSIZE=50000
