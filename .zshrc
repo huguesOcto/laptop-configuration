@@ -67,7 +67,7 @@ source "$CONFIG_DIR/cool_oh_my_zsh_functions.sh"
 
 # Load aliases
 local aliases_dir="$HOME/projects/laptop-configuration/aliases"
-for filez in $aliases_dir/*; do source $filez; done
+for file in $aliases_dir/*; do source $file; done
 
 # Load tools
 local tools_dir="$HOME/projects/laptop-configuration/tools"
