@@ -14,6 +14,7 @@ alias ll='ls -lh'
 alias d='dirs -v | head -10'
 
 # Moving in directories
+alias -- -='cd -'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
