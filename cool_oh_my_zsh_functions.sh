@@ -37,10 +37,7 @@ function zsh_stats_full_commands() {
 
 # put last command in clipboard
 function c() {
-  local last_command
-  last_command=$(fc -ln | tail -n1)
-  echo $last_command | tr -d '\n' | pbcopy
-  echo "Commande \"$last_command\" copiée 👌"
+  echo $(fc -ln | tail -n1) | tr -d '\n' | pbcopy && echo "Commande copiée 👌"
 }
 
 # put my meet link in clipboard
@@ -64,37 +61,4 @@ function git_current_branch() {
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
   fi
   echo ${ref#refs/heads/}
-}
-
-# Checks if working tree is dirty
-function parse_git_dirty() {
-  local STATUS=''
-  local -a FLAGS
-  FLAGS=('--porcelain')
-  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-    if [[ $POST_1_7_2_GIT -gt 0 ]]; then
-      FLAGS+='--ignore-submodules=dirty'
-    fi
-    if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-      FLAGS+='--untracked-files=no'
-    fi
-    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-  fi
-  if [[ -n $STATUS ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
-  else
-    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
-  fi
-}
-
-# Formats prompt string for current git commit short SHA
-function git_prompt_short_sha() {
-  local SHA
-  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
-# Formats prompt string for current git commit long SHA
-function git_prompt_long_sha() {
-  local SHA
-  SHA=$(command git rev-parse HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
 }
