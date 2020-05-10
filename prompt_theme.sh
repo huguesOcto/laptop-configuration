@@ -1,30 +1,20 @@
 #!/bin/bash
 
 function git_prompt_info() {
-  local ref
-  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-  echo "$GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$GIT_PROMPT_SUFFIX"
+    local ref
+    ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+    echo "$GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$GIT_PROMPT_SUFFIX"
 }
 
 function parse_git_dirty() {
-  local STATUS=''
-  local -a FLAGS
-  FLAGS=('--porcelain')
-  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-    if [[ $POST_1_7_2_GIT -gt 0 ]]; then
-      FLAGS+='--ignore-submodules=dirty'
+    local -a FLAGS=('--porcelain')
+    local STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+    if [[ -n $STATUS ]]; then
+        echo "$GIT_PROMPT_DIRTY"
+    else
+        echo "$GIT_PROMPT_CLEAN"
     fi
-    if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-      FLAGS+='--untracked-files=no'
-    fi
-    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-  fi
-  if [[ -n $STATUS ]]; then
-    echo "$GIT_PROMPT_DIRTY"
-  else
-    echo "$GIT_PROMPT_CLEAN"
-  fi
 }
 
 function git_prompt_short_sha() {
