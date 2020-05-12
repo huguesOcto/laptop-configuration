@@ -1,6 +1,7 @@
 #!/bin/bash
 
 crenodispo_dir="$HOME/projects/creno-dispo"
+api_dir="$crenodispo_dir/api"
 
 alias docker-up="docker-compose -f $crenodispo_dir/dev/docker-compose.dev.yml up"
 alias docker-down="docker-compose -f $crenodispo_dir/dev/docker-compose.dev.yml down"
@@ -20,24 +21,10 @@ alias run-batch-reprise="build-batch-reprise && \
             batch-reprise \
             default"
 
-# function run-tests() {
-#     cd $crenodispo_dir/api
-#     ./gradlew test \
-#         --tests "fr.gouv.interieur.creno_dispo.domain.*" \
-#         --tests "fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*" \
-#         --tests "fr.gouv.interieur.creno_dispo.application.rest.dsr.examen.*" \
-#         --tests "fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*" \
-#         --tests "fr.gouv.interieur.creno_dispo.infrastructure.database.creneau.*" \
-#         --tests "fr.gouv.interieur.creno_dispo.infrastructure.database.centre.*"
 
-#     cd -
-# }
-
-alias run-tests="./gradlew test \
+alias run-tests="$api_dir/gradlew -p $api_dir test \
     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.candidat.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.examen.*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau.*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.centre.*\""
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.candidat*\""
 
