@@ -10,11 +10,7 @@ function git_prompt_info() {
 function parse_git_dirty() {
     local -a FLAGS=('--porcelain')
     local STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-    if [[ -n $STATUS ]]; then
-        echo "$GIT_PROMPT_DIRTY"
-    else
-        echo "$GIT_PROMPT_CLEAN"
-    fi
+    [ -n "$STATUS" ] && echo "$GIT_PROMPT_DIRTY" || echo "$GIT_PROMPT_CLEAN"
 }
 
 function git_prompt_short_sha() {
