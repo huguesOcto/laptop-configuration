@@ -17,7 +17,6 @@ function parse_git_dirty() {
     [ -n "$STATUS" ] && echo "$GIT_PROMPT_DIRTY" || echo "$GIT_PROMPT_CLEAN"
 }
 
-# Apply theming defaults
 PS1="%n@%m:%~%# "
 
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
