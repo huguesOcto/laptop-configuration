@@ -12,18 +12,6 @@ function parse_git_dirty() {
     [ -n "$STATUS" ] && echo "$GIT_PROMPT_DIRTY" || echo "$GIT_PROMPT_CLEAN"
 }
 
-function git_prompt_short_sha() {
-  local SHA
-  SHA=$(command git rev-parse --short HEAD 2> /dev/null) \
-    && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
-function git_prompt_long_sha() {
-  local SHA
-  SHA=$(command git rev-parse HEAD 2> /dev/null) \
-    && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
 # Apply theming defaults
 PS1="%n@%m:%~%# "
 
