@@ -8,8 +8,7 @@ function git_prompt_info() {
 }
 
 function parse_git_dirty() {
-    local -a FLAGS=('--porcelain')
-    local STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+    local STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
     [ -n "$STATUS" ] && echo "$GIT_PROMPT_DIRTY" || echo "$GIT_PROMPT_CLEAN"
 }
 
