@@ -1,5 +1,10 @@
 #!/bin/bash
 
+GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+GIT_PROMPT_SUFFIX="%{$reset_color%} "
+GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
 function git_prompt_info() {
     local ref
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -17,8 +22,3 @@ PS1="%n@%m:%~%# "
 
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-
-GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
-GIT_PROMPT_SUFFIX="%{$reset_color%} "
-GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-GIT_PROMPT_CLEAN="%{$fg[blue]%})"
