@@ -8,7 +8,7 @@ declare -a __node_commands=(
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
 # by checking whether __init_nvm is a function.
-if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type __init_nvm)" = function ]; then
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ -z "$nvm_loaded" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
   function __init_nvm() {
@@ -17,6 +17,7 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type __init_nvm)" = function ]; then
     . "$NVM_DIR"/nvm.sh
     unset __node_commands
     unset -f __init_nvm
+    export nvm_loaded="true"
   }
   for i in "${__node_commands[@]}"; do alias "$i"='__init_nvm && '"$i"; done
 fi
