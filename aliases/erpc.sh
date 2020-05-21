@@ -2,7 +2,7 @@
 
 crenodispo_dir="$HOME/projects/creno-dispo"
 
-docker_compose_path="$crenodispo_dir/dev/docker-compose.dev.yml"
+export docker_compose_path="$crenodispo_dir/dev/docker-compose.dev.yml"
 alias docker-up="docker-compose -f $docker_compose_path up"
 alias docker-down="docker-compose -f $docker_compose_path down"
 alias run-docker-compose="docker-down && docker-up --build"

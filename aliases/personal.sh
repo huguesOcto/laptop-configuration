@@ -11,7 +11,6 @@ alias sz='source $ZDOTDIR/.zshrc'
 # List directory contents
 alias l='ls -lah'
 alias ll='ls -lh'
-alias d='dirs -v | head -10'
 
 # Moving in directories
 alias -- -='cd -'
