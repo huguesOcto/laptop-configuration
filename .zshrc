@@ -54,9 +54,9 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' use-cache on # utilise le cache pour les opérations longues
 zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME}/.zsh_cache"
 
-autoload -U compinit
+autoload -Uz compinit
 zmodload -i zsh/complist
-compinit -i -C -d "${ZSH_COMPDUMP}"
+compinit
 _comp_options+=(globdots)  # Include hidden files
 
 # Load custom config

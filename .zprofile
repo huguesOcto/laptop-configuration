@@ -12,7 +12,6 @@ HISTFILE="$HOME/.local/share/zsh/history"
 
 # ~/ Clean-up:
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-${ZSH_VERSION}"
 export _Z_DATA="$XDG_DATA_HOME/z/z"
 export LESSHISTFILE="-" # no less history file
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
