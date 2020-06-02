@@ -25,10 +25,15 @@ alias run-batch-reprise="build-batch-reprise && \
 
 
 api_dir="$crenodispo_dir/api"
+# alias run-tests="$api_dir/gradlew -p $api_dir test \
+#     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
+#     --tests \"fr.gouv.interieur.creno_dispo.use_cases.dsr.*\" \
+#     --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.*\" \
+#     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau*\" \
+#     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.examen*\""
+
 alias run-tests="$api_dir/gradlew -p $api_dir test \
     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
     --tests \"fr.gouv.interieur.creno_dispo.use_cases.*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.examen.*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau*\" \
-    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.examen*\""
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.*\""
 
