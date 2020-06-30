@@ -5,11 +5,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# History
-HISTSIZE=50000
-SAVEHIST=10000
-HISTFILE="$HOME/.local/share/zsh/history"
-
 # ~/ Clean-up:
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export _Z_DATA="$XDG_DATA_HOME/z/z"

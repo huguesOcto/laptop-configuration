@@ -2,6 +2,11 @@
 
 # zmodload zsh/zprof
 
+# History
+HISTSIZE=50000
+SAVEHIST=10000
+HISTFILE="$HOME/.local/share/zsh/history"
+
 # Colors
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
