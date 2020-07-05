@@ -18,9 +18,21 @@ alias gcm='git commit -m'
 alias gd='git diff'
 
 # checkout
-alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
+
+function gco() {
+    if [ -z "$1" ]
+    then
+          git branch | fzf -i --height 50% | xargs git checkout
+    else
+          git checkout $1
+    fi
+}
+
+# disable homebrew git completion : /usr/local/share/zsh/site-functions/_git
+compdef _git gco=git-checkout
+
 
 # fetch
 alias gf='git fetch'
