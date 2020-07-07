@@ -24,9 +24,9 @@ alias gct="git branch -r | fzf -i --height 50% | xargs git checkout -t"
 function gco() {
     if [ -z "$1" ]
     then
-          git branch | fzf -i --height 50% | xargs git checkout
+        git branch | fzf -i --height 50% | xargs git checkout
     else
-          git checkout $1
+        git checkout $1
     fi
 }
 
