@@ -42,8 +42,7 @@ function c() {
 
 # put my meet link in clipboard
 function m() {
-  local my_meet='https://meet.google.com/jbt-nusx-bjm'
-  echo $my_meet | pbcopy
+  echo 'https://meet.google.com/jbt-nusx-bjm' | pbcopy
   echo "Lien du meet copié dans le presse papier 👌"
 }
 
