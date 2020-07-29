@@ -38,8 +38,8 @@ compdef _git gco=git-checkout
 alias gf='git fetch'
 
 # log
-alias gls="git --no-pager log --decorate --abbrev-commit --pretty=oneline -n 5"
-alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD ^origin/develop"
+alias gls="git --no-pager log --decorate --abbrev-commit --pretty=oneline -n 20"
+alias gll="git --no-pager log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD ^origin/master"
 
 # set-upstream
 alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
