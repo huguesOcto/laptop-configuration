@@ -81,5 +81,7 @@ source "$tools_dir/nvm.sh"
 source "$tools_dir/zsh_auto_suggestion.sh"
 source "$tools_dir/zsh_syntax_highlighting.sh"
 
+# Load gitlab token
+source "$CONFIG_DIR/.env"
 
 # zprof
