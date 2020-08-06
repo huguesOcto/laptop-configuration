@@ -40,9 +40,17 @@ function c() {
   echo $(fc -ln | tail -n1) | tr -d '\n' | pbcopy && echo "Commande copiée 👌"
 }
 
-# put my meet link in clipboard
 function m() {
-  echo 'https://meet.google.com/jbt-nusx-bjm' | pbcopy
+  local lien_daily='https://meet.google.com/dqf-ecbv-uwe'
+  local lien_perso='https://meet.google.com/jbt-nusx-bjm'
+  local lien=""
+
+  case $1 in
+     "daily") lien="$lien_daily";;
+     *) lien="$lien_perso";;
+  esac
+
+  echo "$lien" | pbcopy
   echo "Lien du meet copié dans le presse papier 👌"
 }
 
