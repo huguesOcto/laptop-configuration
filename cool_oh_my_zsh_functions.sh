@@ -41,7 +41,7 @@ function c() {
 }
 
 function m() {
-  local lien_daily='https://meet.google.com/dqf-ecbv-uwe'
+  local lien_daily='https://meet.google.com/vbu-esjw-jxx'
   local lien_perso='https://meet.google.com/jbt-nusx-bjm'
   local lien=""
 
