@@ -15,3 +15,14 @@
    branch = false
 [pull]
 	rebase = true
+
+# gitconfig
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+	# Do not cache the vault contents
+	cachetextconv = false
+
+# gitconfig
+[merge "ansible-vault"]
+	name = ansible-vault merge driver
+	driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
