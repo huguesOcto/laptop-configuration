@@ -16,6 +16,8 @@ alias gatling-editeur-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interie
 alias gatling-front-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur.formation.priseSousMandat.PriseSousMandatFrontSimulation"
 
 
+alias ys="yarn start"
+
 api_dir="$crenodispo_dir/api"
 # alias run-tests="$api_dir/gradlew -p $api_dir test \
 #     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
