@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
+
 # functions
 function current_branch() {
   git_current_branch

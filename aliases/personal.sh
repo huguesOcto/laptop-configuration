@@ -2,7 +2,7 @@
 
 # Aliases that remap existing commands
 alias vim="vim -i NONE"
-alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
+# alias git='LANG=en_US.UTF-8 git' # otherwise it's in French
 alias sed='gsed'
 alias awk="gawk"
 ls -G . &>/dev/null && alias ls='ls -G' # Works on mac but not on linux
