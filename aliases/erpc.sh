@@ -18,6 +18,12 @@ alias gatling-front-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur
 
 alias ys="yarn start"
 
+
+# "yarn install"
+# "yarn build:dependencies"
+alias build-fronts="yarn run concurrently \"cd packages/auto-ecole && yarn build\" \"cd packages/repartiteur && yarn build\" \"cd packages/candidat && yarn build\""
+alias run-fronts="yarn run concurrently \"cd packages/auto-ecole && yarn start:prod\" \"cd packages/repartiteur && yarn start:prod\" \"cd packages/candidat && yarn start:prod\""
+
 api_dir="$crenodispo_dir/api"
 # alias run-tests="$api_dir/gradlew -p $api_dir test \
 #     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
