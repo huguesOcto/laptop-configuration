@@ -11,11 +11,6 @@ alias mrc="crenodispo gitlab-mr --current"
 alias mrs="crenodispo gitlab-mr --search"
 
 
-alias fake-smtp="java -jar $crenodispo_dir/fakeSMTP-2.0.jar  -o ~/Desktop/creno_dispo/smtp_output"
-alias gatling-editeur-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur.formation.priseSousMandat.PriseSousMandatEditeurSimulation"
-alias gatling-front-prise-sous-mandat="gradle clean gatlingRun-fr.gouv.interieur.formation.priseSousMandat.PriseSousMandatFrontSimulation"
-
-
 alias ys="yarn start"
 
 
