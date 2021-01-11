@@ -5,7 +5,7 @@ Host *
 # ERPC
 # https://gitlab.com/crenodispo/crenodispo-infra-aws/blob/master/README.md
 Include ~/projects/crenodispo-infra/ssh.config
-Include ~/projects/crenodispo-infra/env_ssh.config
+# Include ~/projects/crenodispo-infra/env_ssh.config
 
 #  Generics
 # All generic data have to be at the end
