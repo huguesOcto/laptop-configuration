@@ -56,8 +56,7 @@ setopt share_history          # share command history data
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' use-cache on # utilise le cache pour les opérations longues
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME}/.zsh_cache"
+
 
 autoload -Uz compinit
 zmodload -i zsh/complist
