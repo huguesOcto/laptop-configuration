@@ -66,7 +66,7 @@ _comp_options+=(globdots)  # Include hidden files
 # Load custom config
 export CONFIG_DIR="$HOME/projects/laptop-configuration"
 source "$CONFIG_DIR/prompt_theme.sh"
-source "$CONFIG_DIR/cool_oh_my_zsh_functions.sh"
+source "$CONFIG_DIR/functions.sh"
 
 # Load aliases
 local aliases_dir="$HOME/projects/laptop-configuration/aliases"
