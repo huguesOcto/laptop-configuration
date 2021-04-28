@@ -140,6 +140,10 @@
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_AAC1E107-40E5-4E76-9794-C47B39ADE501_selection</key>
 	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_B182D5E4-05A1-443C-9BDD-390272332198</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_B182D5E4-05A1-443C-9BDD-390272332198_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -6294,8 +6298,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromClearingHistory</key>
-	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuickPasteBytesPerCall</key>
