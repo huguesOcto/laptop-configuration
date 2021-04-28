@@ -26,3 +26,17 @@
 [merge "ansible-vault"]
     name = ansible-vault merge driver
     driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
+
+[core]
+    pager = delta
+
+# https://github.com/dandavison/delta
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Dracula
+    navigate = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only
