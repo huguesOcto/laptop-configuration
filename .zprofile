@@ -18,6 +18,7 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 # Other program settings
 export LESS=-R
 export PAGER=less
+export DELTA_PAGER="less -R"
 
 # Set up language
 if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
