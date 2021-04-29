@@ -1,0 +1,93 @@
+;; configuration goku
+ {:profiles
+  {:Default {:default true
+         :alone   80 ; hold for .. ms to register single tap
+         :held    50 ; TODO: not sure what it's for
+         :delay   80 ; time after which the key press is delayed
+         :sim     30}} ; keys need to be pressed within this threshold to be considered simultaneous
+
+  :templates {
+     :open "open \"%s\""
+     :applescript "osascript '~/Library/Mobile Documents/com~apple~ScriptEditor2/Documents/%s'"
+     :hs "open -g hammerspoon://%s"
+     :launch "osascript -e 'tell application \"%s\" to activate'"
+     :toggle "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
+     :type "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
+             }
+  :layers {
+    ; :tab-numpad {:key :tab}
+    ; :hyper {:key :tab :alone {:key :tab}}
+  }
+  :simlayers {
+              :arrows {:key :spacebar}
+              :numpad {:key :f}
+              :launch-mode {:key :l} ; remplacer par l'utilisation de hammerspoon
+              ;; layers à ajouter
+              ;;
+              ;; caps lock (échappe, majuscules sur les accents)
+              ;; déplacement à gauche et à droite d'un mot
+              ;; déplacement à gauche et à droite sur toute la ligne
+              ;; sélection à gauche et à droite d'un mot
+              ;; sélection à gauche et à droite de la ligne
+              ;; sélection dans les 4 directions
+            }
+  :main [
+      {:des "arrows (spacebar)",
+         :rules [:arrows
+                 [:j :left_arrow]
+                 [:k :down_arrow]
+                 [:l :right_arrow]
+                 [:i :up_arrow]
+                ]
+          }
+       {:des "numpad (f-key)",
+         :rules [:numpad
+                 [:u :keypad_7]
+                 [:i :keypad_8]
+                 [:o :keypad_9]
+                 [:p :keypad_hyphen]
+                ;;  ;;
+                 [:h :keypad_slash]
+                 [:j :keypad_4]
+                 [:k :keypad_5]
+                 [:l :keypad_6]
+                 [:semicolon :keypad_plus]
+                ;;  ;;
+                 [:n :keypad_hyphen]
+                 [:m :keypad_1]
+                 [:comma :keypad_2]
+                 [:period :keypad_3]
+                ;;  ;;
+                 [:##spacebar :keypad_0]
+
+
+                ]
+          }
+       {:des "l-key (launch-mode)",
+         :rules [:launch-mode
+                  ;; remplacer par du hamerspoon
+                 ; [:s [:launch "Slack"]]
+                 ; [:f [:launch "Firefox"]]
+                 ; [:d [:launch "Firefox Developer Edition"]]
+                 ; [:g [:launch "GitUp"]]
+                 ; [:c [:launch "Google Chrome"]]
+                 ; [:p [:launch "System Preferences"]]
+                 [:f :!CTOf] ; firefox
+                 [:d :!CTOd] ; firefox developer edition
+                 [:s :!CTOs] ; slack
+                 [:u :!CTOu] ; sublime text
+                 [:g :!CTOg] ; gitup
+                 [:c :!CTOc] ; chrome
+                 [:p :!CTOp] ; préférences
+                 [:i :!CTOi] ; intellij
+                 ;; ajouter un commande pour lancer l'api dans intellij
+                 ;; ajouter une commande pour lancer intellij à la racine du repo
+                ]
+          }
+        ; {:des "tab"
+        ;  :rules [[:##tab :left_command nil {:alone :tab}]]}
+
+    ]
+ }
+
+
