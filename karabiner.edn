@@ -38,30 +38,30 @@
     :firefoxdev ["^org\\.mozilla\\.firefoxdeveloperedition$"]
    }
   :main [
-      ;; slack <-> intellij <-> firefox-dev
+      ;; slack <-> firefox-dev <-> intellij
       {
-        :des "Cmd + Option + Ctrl + left to slack from intellij"
-        :rules [[:!CTOleft_arrow :!CTOs :intellij]]
+        :des "Cmd + Option + Ctrl + left to firefox-dev from intellij"
+        :rules [[:!CTOleft_arrow :!CTOd :intellij]]
       }
       {
-        :des "Cmd + Option + Ctrl + right to intellij from slack"
-        :rules [[:!CTOright_arrow :!CTOi :slack]]
+        :des "Cmd + Option + Ctrl + right to slack from intellij"
+        :rules [[:!CTOright_arrow :!CTOs :intellij]]
       }
       {
-        :des "Cmd + Option + Ctrl + right to firefox-dev from intellij"
-        :rules [[:!CTOright_arrow :!CTOd :intellij]]
+        :des "Cmd + Option + Ctrl + left to intellij from slack"
+        :rules [[:!CTOleft_arrow :!CTOi :slack]]
       }
       {
-        :des "Cmd + Option + Ctrl + left to intellij from firefox-dev"
-        :rules [[:!CTOleft_arrow :!CTOi :firefoxdev]]
+        :des "Cmd + Option + Ctrl + right to firefox-dev from slack"
+        :rules [[:!CTOright_arrow :!CTOd :slack]]
       }
       {
-        :des "Cmd + Option + Ctrl + right to slack from firefox-dev"
-        :rules [[:!CTOright_arrow :!CTOs :firefoxdev]]
+        :des "Cmd + Option + Ctrl + left to slack from firefox-dev"
+        :rules [[:!CTOleft_arrow :!CTOs :firefoxdev]]
       }
       {
-        :des "Cmd + Option + Ctrl + left to firefox-dev from slack"
-        :rules [[:!CTOleft_arrow :!CTOd :slack]]
+        :des "Cmd + Option + Ctrl + right to intellij from firefox-dev"
+        :rules [[:!CTOright_arrow :!CTOi :firefoxdev]]
       }
       {:des "arrows (spacebar)",
          :rules [:arrows
