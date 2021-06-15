@@ -14,6 +14,9 @@ alias sz='source $ZDOTDIR/.zshrc'
 alias l='ls -lah'
 alias ll='ls -lh'
 
+alias h="htop"
+alias lz="lazydocker"
+
 # Moving in directories
 alias -- -='cd -'
 alias -g ...='../..'
