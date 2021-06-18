@@ -22,13 +22,13 @@ alias run-fronts="yarn run concurrently \"cd packages/auto-ecole && yarn start:p
 alias build-and-run-candidat="yarn build && yarn start:prod"
 
 api_dir="$crenodispo_dir/api"
-# alias run-tests="$api_dir/gradlew -p $api_dir test \
-#     --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
-#     --tests \"fr.gouv.interieur.creno_dispo.use_cases.dsr.*\" \
-#     --tests \"fr.gouv.interieur.creno_dispo.application.rest.dsr.*\" \
-#     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.creneau*\" \
-#     --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.examen*\""
-
 alias run-tests="$api_dir/gradlew -p $api_dir test \
-    --tests \"fr.gouv.interieur.creno_dispo.application.rest.formation.creneau.*\""
+    --tests \"fr.gouv.interieur.creno_dispo.domain.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.use_cases.formation.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.use_cases.penalite.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.application.rest.penalite.*\" \
+    --tests \"fr.gouv.interieur.creno_dispo.infrastructure.database.penalite*\""
+
+# alias run-tests="$api_dir/gradlew -p $api_dir test \
+#     --tests \"fr.gouv.interieur.creno_dispo.application.rest.formation.creneau.*\""
 
