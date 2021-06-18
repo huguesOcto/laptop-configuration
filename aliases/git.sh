@@ -32,6 +32,8 @@ function gco() {
     fi
 }
 
+alias gm='git checkout master'
+
 # disable homebrew git completion : /usr/local/share/zsh/site-functions/_git
 compdef _git gco=git-checkout
 
