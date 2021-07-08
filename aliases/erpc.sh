@@ -10,6 +10,8 @@ alias run-batch-reprise="crenodispo run-batch-reprise"
 alias mrc="crenodispo gitlab-mr --current"
 alias mrs="crenodispo gitlab-mr --search"
 
+alias db="docker exec -it crenodispo-db psql -U postgres -d crenodispo_db"
+
 
 alias ys="yarn start"
 
