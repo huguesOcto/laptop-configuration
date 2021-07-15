@@ -24,6 +24,14 @@ function zsh_stats() {
     | nl
 }
 
+function zsh_stats_full_commands() {
+  fc -ln 1 \
+    | _compute_stats \
+    | sort -nr \
+    | head -n50 \
+    | nl
+}
+
 # put last command in clipboard
 function c() {
   echo $(fc -ln | tail -n1) | tr -d '\n' | pbcopy && echo "Commande copiée 👌"
